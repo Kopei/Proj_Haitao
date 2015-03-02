@@ -1,3 +1,4 @@
+# has defeats in weight if no information in name
 # -*- coding: utf-8 -*-
 import scrapy
 from scrapy.contrib.linkextractors import LinkExtractor
