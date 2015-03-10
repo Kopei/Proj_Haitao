@@ -8,6 +8,7 @@ import pymongo
 from scrapy.conf import settings
 from scrapy.exceptions import DropItem
 from scrapy import log
+import time
 
 
 class MongoDBPipeline(object):
@@ -17,7 +18,7 @@ class MongoDBPipeline(object):
             settings['MONGODB_PORT']
         )
         db = con[settings['MONGODB_DB']]
-        self.collection = db[settings['MONGODB_COLLECTION']]
+        self.collection = db[settings['MONGODB_COLLECTION'] + ' '+time.asctime()]
 
     def process_item(self, item, spider):
         valid = True
@@ -29,7 +30,30 @@ class MongoDBPipeline(object):
             name = ''.join(item['name'])
             if name:
                 item['name'] = ' '.join(name.split())
-                self.collection.insert(dict(item))
-                log.msg("item added to MongoDB database!",
-                        level=log.DEBUG, spider=spider)
+
+            account = ''.join(item['account'])
+            if account:
+                item['account'] = account
+
+            weight = ''.join(item['weight'])
+            if weight:
+                item['weight'] = ''.join(weight.split())
+            # price normalize to num without euro dollar
+            pricenum = ''.join(item['price'])
+#            if u'\u20ac' in price:                     # unicode must add u in front of ''
+#                pricenum = ''.join(price.strip(u'\u20ac').split())
+#            elif '\u20ac' in price:
+#                pricenum = ''.join(price.strip('\20ac').split())
+#            else:
+#                pricenum = ''.join(price.split())
+            if ',' in pricenum:
+                item['price'] = float(pricenum.replace(',', '.'))
+            else:
+                try:
+                    item['price'] = float(pricenum)
+                except ValueError:
+                    pass
+
+            self.collection.insert(dict(item))
+            log.msg("item added to MongoDB database!", level=log.DEBUG, spider=spider)
         return item

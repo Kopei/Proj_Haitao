@@ -32,8 +32,9 @@ class BabyneoSpider(Spider):
             if goods.xpath(alter_pricepath):
                 item['price'] = goods.xpath(alter_pricepath).re(r'\b\d+.\d+.')[0]
             else:
-                item['price'] = goods.xpath("descendant::div[@class='list_entry_price']/text()")[0].extract()
+                item['price'] = goods.xpath("descendant::div[@class='list_entry_price']/text()").re(r'\d+[,.]?\d+\b')
             item['link'] = goods.xpath("descendant::h2[@class='list_entry_name']/a/@href")[0].extract()
             item['instock'] = 'yes'
-            item['data'] = time.asctime()
+            item['date'] = time.asctime()
+            item['account'] = '1'
             yield item

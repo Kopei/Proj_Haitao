@@ -16,10 +16,10 @@ class MytimeSpider(scrapy.Spider):
         item = ProjHaitaoItem()
         for goods in response.xpath("//ul[@id='products_list']/li"):
             item['name'] = goods.xpath('descendant::h3/a[@class="productTitle"]/text()').extract()
-            item['price'] = goods.xpath('descendant::span[@class="product-price"]/text()').extract()
+            item['price'] = goods.xpath('descendant::span[@class="product-price"]/text()').re(r'\d+[,.]?\d+\b')
             item['link'] = goods.xpath('descendant::h3/a[@class="productTitle"]/@href').extract()
             item['account'] = '1'
             item['weight'] = goods.xpath('descendant::h3/a[@class="productTitle"]/nobr/text()').extract()
             item['instock'] = 'yes'
-            item['data'] = time.asctime()
+            item['date'] = time.asctime()
             yield item

@@ -20,10 +20,10 @@ class HippSpider(scrapy.Spider):
         item = ProjHaitaoItem()
         for goods in response.xpath("//div[@id and @class='produkt']"):
             item['name'] = goods.xpath("descendant::h2/a/text()").extract()
-            item['price'] = goods.xpath("descendant::li[@class='preis']/span/strong/text()").extract()
+            item['price'] = goods.xpath("descendant::li[@class='preis']/span/strong/text()").re(r'\d+[,.]?\d+\b')
             item['link'] = goods.xpath("descendant::h2/a/@href").extract()
             item['instock'] = 'yes'
-            item['data'] = time.asctime()
+            item['date'] = time.asctime()
             try:
                 item['account'] = item['name'][1].split('x')[0]
                 item['weight'] = item['name'][1].split('x')[1]

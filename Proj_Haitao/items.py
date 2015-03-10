@@ -10,7 +10,7 @@ import scrapy
 
 class ProjHaitaoItem(scrapy.Item):
     # define the fields for your item here like:
-    data = scrapy.Field()
+    date = scrapy.Field()
     name = scrapy.Field()
     weight = scrapy.Field()
     price = scrapy.Field()

@@ -39,7 +39,7 @@ class BabymarktSpider(CrawlSpider):
 #            i['price'] = float(''.join(path_price.re(r'\d+,d+')).split()[0].replace(',', '.'))/int(i['account'])
 #        else:
             #i['price'] = float(''.join(path_price.re(r'\d+,d+')).split()[0].replace(',', '.'))
-        i['price'] = path_price.extract()
-        i['data'] = time.asctime()
+        i['price'] = path_price.re(r'\d+[,.]?\d+\b')
+        i['date'] = time.asctime()
         i['link'] = response.url
         return i
