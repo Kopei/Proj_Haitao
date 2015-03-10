@@ -58,7 +58,7 @@
       <file leaf-file-name="windln_3.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Proj_Haitao/spiders/windln_3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="966">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="966">
               <caret line="26" column="107" selection-start-line="26" selection-start-column="107" selection-end-line="26" selection-end-column="107" />
               <folding />
             </state>
@@ -75,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hipp.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="hipp.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Proj_Haitao/spiders/hipp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="256" max-vertical-offset="1035">
-              <caret line="22" column="113" selection-start-line="22" selection-start-column="113" selection-end-line="22" selection-end-column="113" />
+            <state vertical-scroll-proportion="1.1972603" vertical-offset="0" max-vertical-offset="1035">
+              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -105,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pipelines.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pipelines.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Proj_Haitao/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9126984" vertical-offset="897" max-vertical-offset="1495">
-              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="897" max-vertical-offset="1495">
+              <caret line="49" column="51" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
               <folding>
                 <element signature="e#192#206#0" expanded="true" />
               </folding>
@@ -834,11 +834,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proj_Haitao/spiders/windln_3.py">
+    <entry file="file://$PROJECT_DIR$/Proj_Haitao/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="966">
-          <caret line="26" column="107" selection-start-line="26" selection-start-column="107" selection-end-line="26" selection-end-column="107" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="897" max-vertical-offset="1495">
+          <caret line="49" column="51" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
+          <folding>
+            <element signature="e#192#206#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -852,21 +854,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proj_Haitao/spiders/hipp.py">
+    <entry file="file://$PROJECT_DIR$/Proj_Haitao/spiders/windln_3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="256" max-vertical-offset="1035">
-          <caret line="22" column="113" selection-start-line="22" selection-start-column="113" selection-end-line="22" selection-end-column="113" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="966">
+          <caret line="26" column="107" selection-start-line="26" selection-start-column="107" selection-end-line="26" selection-end-column="107" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proj_Haitao/pipelines.py">
+    <entry file="file://$PROJECT_DIR$/Proj_Haitao/spiders/hipp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9126984" vertical-offset="897" max-vertical-offset="1495">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <element signature="e#192#206#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="1.1972603" vertical-offset="0" max-vertical-offset="1035">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
