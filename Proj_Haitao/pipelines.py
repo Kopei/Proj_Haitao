@@ -33,7 +33,9 @@ class MongoDBPipeline(object):
 
             account = ''.join(item['account'])
             if account:
-                item['account'] = account
+                item['account'] = int(account)
+            else:
+                item['account'] = 1
 
             weight = ''.join(item['weight'])
             if weight:
@@ -53,6 +55,8 @@ class MongoDBPipeline(object):
                     item['price'] = float(pricenum)
                 except ValueError:
                     pass
+
+            item['link'] = ''.join(item['link'])
 
             self.collection.insert(dict(item))
             log.msg("item added to MongoDB database!", level=log.DEBUG, spider=spider)

@@ -1,9 +1,7 @@
 # basically finish crawl
 # http://www.windeln.de/aptamil-fms-fruehchennahrung.html name attribute has problem
-# http://www.windeln.de/edelweiss-milchzucker.html account has not value
-# http://www.windeln.de/alete-mahlzeit-zum-trinken.html has no weight
-# http://www.windeln.de/bebivita-milchnahrung.html account error
-# http://www.windeln.de/bebivita-milchnahrung.html weight error
+#  http://www.windeln.de/humana-spezialnahrung-ar.html name has no brand
+# http://www.windeln.de/milupa-milumil-milchnahrung-comfort.html has no name
 # -*- coding: utf-8 -*-
 import scrapy
 from scrapy.http import Request
@@ -25,8 +23,8 @@ class Windln3Spider(scrapy.Spider):
         for goods in response.xpath('//div[@data-view-id]'):
             item['name'] = goods.xpath("descendant::div[@itemprop='itemOffered']/text()").extract()
             item['price'] = goods.xpath("descendant::span[@class='raw-price']/text()").re(r'\d+[,.]?\d+\b')
-            item['account'] = goods.xpath("descendant::div[@itemprop='itemOffered']/text()").re(ur'\d(?= St\u00fcck)')
-            item['weight'] = goods.xpath("descendant::div[@itemprop='itemOffered']/text()").re(r'\d+\,?\d+ ?\w+(?=\))|\b\d{2,4} [mlg]+\b')
+            item['account'] = goods.xpath("descendant::div[@itemprop='itemOffered']/text()").re(ur'\d+(?= St\u00fcck) \+')
+            item['weight'] = goods.xpath("descendant::div[@itemprop='itemOffered']/text()").re(r'\d+\,?\d+ ?\w+(?=\))|\b\d{2,4} [mlg]+\b|\d Liter')
             item['link'] = response.url
             item['date'] = time.asctime()
             if goods.xpath("descendant::span[@id='notShippable']/text()"):
